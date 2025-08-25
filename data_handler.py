@@ -70,7 +70,7 @@ class DataHandler:
                 [df.drop(columns=["data"]),
                  pd.json_normalize(df["data"])],
                  axis=1
-            )
+            ).reset_index()
             return df_clean
         else:
             raise RuntimeError("Bad API selection!")
